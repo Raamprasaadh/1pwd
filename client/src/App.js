@@ -1,0 +1,25 @@
+import './App.css';
+
+import Navbar from './components/navBarComponent';
+import AddPassword from './components/addPasswordComponent';
+import ViewPassword from './components/viewPasswordComponent';
+
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+function App() {
+  return (
+
+    <Router>
+      <div className="App">
+      <Navbar />
+      <Switch>
+        <Route path="/viewpwd" component={ViewPassword}></Route>
+        <Route path="/addpwd" component={AddPassword}></Route>
+      </Switch>
+        </div>
+
+      </Router >
+  );
+}
+
+export default App;
