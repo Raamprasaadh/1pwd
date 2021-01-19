@@ -34,7 +34,7 @@ export default class loginComponent extends Component {
                 <h2>Login</h2>
             </div>
             <div className="loginForm">
-                <form action={this.onSubmit}>
+                <form onSubmit={this.onSubmit}>
                     
                     <div className="formGroup">
                         <label className="formLabel">Password : </label>

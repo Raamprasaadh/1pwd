@@ -7,7 +7,8 @@ export default class signinComponent extends Component {
         super(props);
         this.state={
             password:"",
-            retypedPassword:""
+            retypedPassword:"",
+            error:""
         }
         
         this.onChangePassword=this.onChangePassword.bind(this);
@@ -21,14 +22,55 @@ export default class signinComponent extends Component {
     }
     onChangeRetypedPassword(e){
         //validation
-        this.setState({
-            retypedPassword:e.target.value
-        });
+        if(
+            this.state.password === e.target.value
+        )
+        {
+            this.setState({
+                retypedPassword:e.target.value,
+                error:""
+            });
+        }
+        else{
+            this.setState({
+                error: "Password and retype password does not match"
+            });
+        }
+
+        
     }
     onSubmit(e){
         e.preventDefault();
-        //axios request
-    }
+
+        const password = {
+            "password":this.state.password
+        }
+        
+        if(this.state.password === this.state.retypedPassword)
+        {
+            axios.post("http://localhost:3001/credential/signin",password)
+            .then(()=>{window.alert("Only password has been set");
+        window.location('/addpwd')})
+            .catch(err=>{
+                if(err.error ==="wrong password")
+                {
+                this.setState(
+                    {
+                        error:"wrong password"
+                    }
+                )
+                }
+                else{
+                    this.setState(
+                        {
+                            error:"password and retyped password does not match"
+                        }
+                    );
+            }
+            })
+        }
+        
+}
 
     render() {
 
@@ -38,7 +80,7 @@ export default class signinComponent extends Component {
                     <h2>Sign in</h2>
                 </div>
                 <div className="signinForm">
-                    <form action={this.onSubmit}>
+                    <form onSubmit={this.onSubmit}>
                         <h1>Going forward this will be the only password you will have to remember, we suggest you bring the best</h1>
                         <div className="formGroup">
                             <label className="formLabel">Password : </label>
@@ -48,7 +90,7 @@ export default class signinComponent extends Component {
                         <label className="formLabel">Retype Password : </label>
                         <input type="text" className="formInput"/>
                         </div>
-
+                        <span style={{color:"red"}}>{this.state.error}</span>
                     <button type="submit">Sign-in</button>
                     </form>
                 </div>
