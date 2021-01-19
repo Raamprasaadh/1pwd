@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../style.css';
+
+var ctr=0;
 
 export default class viewPasswordComponent extends Component {
     constructor(props){
@@ -10,6 +13,7 @@ export default class viewPasswordComponent extends Component {
         }
     }
     componentDidMount(){
+        ctr =0;
         axios.get("http://localhost:3001/password")
         .then(res=>this.setState({passwords:res.data}));
     }
@@ -22,22 +26,34 @@ export default class viewPasswordComponent extends Component {
                 <div className="displayPasswords">
                     <table>
                         <thead>
-                            <td>Name</td>
-                            <td>Url</td>
-                            <td>User Name</td>
-                            <td>Password</td>
-                            <td>Type</td>
+                            <th>Name</th>
+                            <th>Url</th>
+                            <th>User Name</th>
+                            <th>Password</th>
+                            <th>Type</th>
                         </thead>
                         <tbody>
                             {
+                                 
                                 this.state.passwords.map(password=>{
-                                    return <tr>
+                                    ctr++;
+                                    var style ="";
+                                    if(ctr%2 === 0)
+                                    {
+                                        style = "trTypeA";
+                                    }
+                                    else
+                                    {
+                                        style = "trTypeB";
+                                    }
+                                    return <tr className={style} key={password.id}>
                                         <td>{password.name}</td>
                                         <td>{password.url}</td>
                                         <td>{password.userName}</td>
-                                        <td>{password.password}</td>
+                                        <td><input type="password" value={password.password}/></td>
                                         <td>{password.type}</td>
                                     </tr>
+                                    
                                 })
                             }
                         </tbody>

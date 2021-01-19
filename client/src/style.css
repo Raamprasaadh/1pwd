@@ -1,0 +1,89 @@
+.navBar{
+    background:red;
+    color:white;
+    width:100%;
+    height:3%;
+    margin:0;
+    overflow: hidden;
+}
+
+.navLogo{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    display:flex;
+    float:left;
+}
+
+.navLinks{
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    float:right;
+    text-align: center;
+    padding:5px;
+    margin-top:2.5%;
+}
+
+.navLinks:hover{
+    text-decoration: none;
+    font-size: 17px;
+    background-color: white;
+    color:red;
+    float:right;
+}
+
+.pageTitle{
+    font-size:larger;
+    text-align: center;
+    background-color: chocolate;
+}
+form{
+    width: 80%;
+    margin-right:10% ;
+    border-radius: 5px;
+    margin-left:10% ;
+    border:1px solid #000000;
+    padding: 5px;
+}
+.formLabel{
+    text-align: left;
+    display: block;
+    margin-top:5px;
+    margin-bottom: 5px;
+    background-color: grey;
+}
+.formInput{
+    width: 100%;
+}
+button{
+    width: 20%;
+    color:red;
+    background-color: cornsilk;
+    border-radius: 5px;
+}
+button:hover{
+    color:cornsilk;
+    background-color: red;
+}
+
+table{
+    border:1px solid #000000;
+    border-radius: 5px;
+    width:90%;
+    margin-right: 5%;
+    margin-left:5%;
+}
+thead{
+    border: 1px solid #000000;
+    border-radius: 5px;
+    position:relative;
+    background-color: chocolate;
+}
+.trTypeA{
+    background-color: lightgrey;
+}
+.trTypeB{
+    background-color: white;
+}

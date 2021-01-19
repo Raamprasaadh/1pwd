@@ -78,40 +78,40 @@ componentDidMount(){
                     <div className="formLabel">
                         <label>Name :</label>
                     </div>
-                    <div className="formInput">
-                        <input required type="text" onChange = {this.onChangeName}placeholder="eg. office mail" />
+                    <div >
+                        <input required className="formInput" type="text" onChange = {this.onChangeName}placeholder="eg. office mail" />
                     </div>
                     </div>
                     <div className="formGroup">
                     <div className="formLabel">
                         <label>Url :</label>
                     </div>
-                    <div className="formInput">
-                        <input required type="text" onChange = {this.onChangeUrl} placeholder="eg. www.gmail.com" />
+                    <div >
+                        <input required className="formInput" type="text" onChange = {this.onChangeUrl} placeholder="eg. www.gmail.com" />
                     </div>
                    </div>
                    <div className="formGroup">
                     <div className="formLabel">
                         <label>Username :</label>
                     </div>
-                    <div className="formInput">
-                        <input required type="text" onChange={this.onChangeuserName} placeholder="eg. example@gmail.com" />
+                    <div >
+                        <input required className="formInput" type="text" onChange={this.onChangeuserName} placeholder="eg. example@gmail.com" />
                     </div>
                 </div>
                    <div className="formGroup">
                     <div className="formLabel">
                         <label>Password :</label>
                     </div>
-                    <div className="formInput">
-                        <input required type="password" onChange={this.onChangePwd}  />
+                    <div >
+                        <input required  className="formInput" type="password" onChange={this.onChangePwd}  />
                     </div>
                 </div>
                 <div className="formGroup">
                     <div className="formLabel">
                         <label>Type :</label>
                     </div>
-                    <div className="formInput">
-                        <select required onChange={this.onChangeType} >
+                    <div >
+                        <select required className="formInput" onChange={this.onChangeType} >
                             <option>select</option>
                             {
                                 this.state.types.map(type=>{
