@@ -2,6 +2,13 @@ const bcrypt = require('bcryptjs');
 const router = require('express').Router();
 const Credential = require('../models/credentials.model');
 
+
+router.route('/').get((req,res)=>{
+    Credential.find()
+    .then((credential)=>res.json(credential))
+    .catch(err=>{res.json("error:"+err)});
+});
+
 router.route('/signin').post((req,res)=>{
     //bcrypt the password
     
