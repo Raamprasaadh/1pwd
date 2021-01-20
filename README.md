@@ -3,10 +3,9 @@ A Mern Desktop Application to store passwords.
 
 
 
-**pre-requisites:**
+**Pre-requisites:**
 
-1. Mongodb should be installed. 
-[Download and install from below link](https://www.mongodb.com/try/download/community)
+1. Mongodb should be installed. [Download and install from below link](https://www.mongodb.com/try/download/community)
 
 2.Nodejs should be installed. [Download and install from below link.](https://nodejs.org/en/download/)
 
