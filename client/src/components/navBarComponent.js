@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {logout} from '../actions';
-
+import logo from '../1pwd.bmp'
 import '../style.css';
 
  class navBarComponent extends Component {
@@ -33,7 +33,8 @@ import '../style.css';
             <div>
                 <div className="navBar">
                     <div className="navLogo">
-                        <h2>(OP) Only-Password</h2>
+                        <img src={logo} className="logoImg" alt="404"/>
+                        <h2> Only-Password</h2>
                     </div>
                     <div className="">
                     
