@@ -68,7 +68,7 @@ componentDidMount(){
 
     render() {
                return (
-            <div>
+            <div className="body">
                 <div className="pageTitle">
                     Add Password page
                 </div>

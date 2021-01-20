@@ -44,15 +44,16 @@ import '../style.css';
     }
     render() {
         return (
-            <div>
+            <div className="login">
+            <div className="body">
                 {
                     (this.props.logged)?<Redirect to="/addpwd" />:""
                 }
             <div className="pageTitle">
-                <h2>Login</h2>
+                Login
             </div>
-            <div className="loginForm">
-                <form onSubmit={this.onSubmit}>
+            
+                <form className="loginForm" onSubmit={this.onSubmit}>
                     
                     <div className="formGroup">
                         <label className="formLabel">Password : </label>
@@ -61,8 +62,8 @@ import '../style.css';
                     </div>
                     <button type="submit">Login</button>
                 </form>
-            </div>
-    
+            
+                </div>
             </div>
         )
     }

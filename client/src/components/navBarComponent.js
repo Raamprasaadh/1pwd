@@ -33,7 +33,7 @@ import '../style.css';
             <div>
                 <div className="navBar">
                     <div className="navLogo">
-                        <h2>(OP) One-Password</h2>
+                        <h2>(OP) Only-Password</h2>
                     </div>
                     <div className="">
                     

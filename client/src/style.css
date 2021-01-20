@@ -1,6 +1,10 @@
+.body{
+    min-height: 100vh;
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+}
+
 .navBar{
-    background:red;
-    color:white;
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
     width:100%;
     height:3%;
     margin:0;
@@ -30,60 +34,82 @@
     text-decoration: none;
     font-size: 17px;
     background-color: white;
-    color:red;
+    color:navy;
     float:right;
+    border-radius: 5px;
 }
 
 .pageTitle{
-    font-size:larger;
+    font-size:30px;
     text-align: center;
-    background-color: chocolate;
+    color: white;
 }
+
 form{
     width: 80%;
     margin-right:10% ;
     border-radius: 5px;
     margin-left:10% ;
-    border:1px solid #000000;
-    padding: 5px;
+    background: white;
+    background: linear-gradient(to right bottom,rgba(255,255,255,0.8), rgba(255,255,255,0.3));
+    border:0;
+    padding: 15px;
+}
+
+.loginForm{
+    width: 30%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-right: 35%;
+    margin-left: 35%;
+    justify-content:space-evenly;
 }
 .formLabel{
     text-align: left;
     display: block;
     margin-top:5px;
     margin-bottom: 5px;
-    background-color: grey;
+    
 }
 .formInput{
     width: 100%;
 }
 button{
     width: 20%;
-    color:red;
+    color:navy;
     background-color: cornsilk;
+    background: linear-gradient(to right top, rgba(255,255,255,0.7),rgba(255,255,255,0.3));
+    margin-top:10px ;
+    border:solid 1px #dddddd;
+    height:2rem;
     border-radius: 5px;
 }
 button:hover{
     color:cornsilk;
-    background-color: red;
+    background-color: navy;
+    background: linear-gradient(to right top, rgba(0,0,128,0.5),rgba(0,0,128,0.1));
 }
 
 table{
-    border:1px solid #000000;
-    border-radius: 5px;
+    border:none;
+    border-radius: 10%;
     width:90%;
+    
+    margin-top:2%;
     margin-right: 5%;
     margin-left:5%;
 }
 thead{
-    border: 1px solid #000000;
     border-radius: 5px;
+    color: navy;
+    border:none;
     position:relative;
-    background-color: chocolate;
 }
-.trTypeA{
-    background-color: lightgrey;
-}
-.trTypeB{
-    background-color: white;
+.passwordRow{
+    background: white;
+    background: linear-gradient(to right bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.3));
+    border:none;
+    height:2rem;
+    border-radius: 15px;
 }
