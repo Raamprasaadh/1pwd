@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router';
+import {login} from '../actions/'
 
 import '../style.css';
 
-export default class loginComponent extends Component {
+ class LoginComponent extends Component {
     constructor(props){
         super(props);
 
@@ -16,20 +19,35 @@ export default class loginComponent extends Component {
     }
     
     onChangePassword(e){
+
         this.setState({
-            password:this.setState({
+            
                 password:e.target.value
-            })
         })
     }
+    
     onSubmit(e){
         e.preventDefault();
+        
+        const password={
+            password:this.state.password
+        }
 
-        //api call and windows.location
+        if(password!==""){
+        axios.post("http://localhost:3001/credential/login", password)
+        .then(()=>{
+            this.props.dispatchLogin();
+        window.alert("Login success");          
+        })
+        .catch((err)=>{window.alert(err)})
+        }
     }
     render() {
         return (
             <div>
+                {
+                    (this.props.logged)?<Redirect to="/addpwd" />:""
+                }
             <div className="pageTitle">
                 <h2>Login</h2>
             </div>
@@ -50,3 +68,18 @@ export default class loginComponent extends Component {
     }
 }
 
+function mapDispatchToProps(dispatch){
+    return{
+        dispatchLogin:()=>{dispatch(login())}
+    }
+}
+
+function mapStateToProps(state){
+    
+    return(
+        {
+        logged:state.AppDetails.logged
+    })
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(LoginComponent);

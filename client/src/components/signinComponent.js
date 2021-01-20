@@ -32,6 +32,7 @@ export default class signinComponent extends Component {
             });
         }
         else{
+            
             this.setState({
                 error: "Password and retype password does not match"
             });
@@ -42,31 +43,19 @@ export default class signinComponent extends Component {
     onSubmit(e){
         e.preventDefault();
 
-        const password = {
-            "password":this.state.password
-        }
         
-        if(this.state.password === this.state.retypedPassword)
+        
+        if(this.state.retypedPassword!=="")
         {
+            const password = {
+                "password":this.state.password
+            }
+
             axios.post("http://localhost:3001/credential/signin",password)
             .then(()=>{window.alert("Only password has been set");
-        window.location('/addpwd')})
+        window.location.assign('/login')})
             .catch(err=>{
-                if(err.error ==="wrong password")
-                {
-                this.setState(
-                    {
-                        error:"wrong password"
-                    }
-                )
-                }
-                else{
-                    this.setState(
-                        {
-                            error:"password and retyped password does not match"
-                        }
-                    );
-            }
+                
             })
         }
         
@@ -77,20 +66,21 @@ export default class signinComponent extends Component {
         return (
             <div>
                 <div className="pageTitle">
-                    <h2>Sign in</h2>
+                    <h2>Sign up</h2>
                 </div>
                 <div className="signinForm">
                     <form onSubmit={this.onSubmit}>
                         <h1>Going forward this will be the only password you will have to remember, we suggest you bring the best</h1>
                         <div className="formGroup">
                             <label className="formLabel">Password : </label>
-                            <input type="password" className="formInput"/>
+                            <input type="password" onChange={this.onChangePassword} className="formInput"/>
                         </div>
                         <div className="formGroup">
                         <label className="formLabel">Retype Password : </label>
-                        <input type="text" className="formInput"/>
+                        <input type="text" onChange={this.onChangeRetypedPassword} className="formInput"/>
                         </div>
                         <span style={{color:"red"}}>{this.state.error}</span>
+                        <br/>
                     <button type="submit">Sign-in</button>
                     </form>
                 </div>

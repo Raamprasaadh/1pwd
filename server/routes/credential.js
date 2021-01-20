@@ -36,8 +36,8 @@ router.route('/login').post((req,res)=>{
     //bcrypt and findone
     Credential.find()
                 .then(data=>{
-                    console.log(data[0].password);
-                    console.log(req.body.password);
+                    
+                    
                     bcrypt.compare(req.body.password,data[0].password)
                     .then(isMatch=>{
                         if(!isMatch)

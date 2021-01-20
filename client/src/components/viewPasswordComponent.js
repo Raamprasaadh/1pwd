@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {connect} from 'react-redux';
 import '../style.css';
 
 var ctr=0;
 
-export default class viewPasswordComponent extends Component {
+ class viewPasswordComponent extends Component {
     constructor(props){
         super(props);
 
         this.state ={
-            passwords:[]
+            passwords:[],
+            showPassword:"false"
         }
+        this.showPasswords =this.showPasswords.bind(this);
     }
+
+    showPasswords(e){
+        this.setState({
+            showPassword:!this.state.showPassword
+        });
+    }
+
     componentDidMount(){
         ctr =0;
         axios.get("http://localhost:3001/password")
@@ -20,6 +30,7 @@ export default class viewPasswordComponent extends Component {
     render() {
         return (
             <div>
+{            (this.props.logged)?<div>                
                 <div className="pageTitle">
                     View Password page
                 </div>
@@ -50,7 +61,7 @@ export default class viewPasswordComponent extends Component {
                                         <td>{password.name}</td>
                                         <td>{password.url}</td>
                                         <td>{password.userName}</td>
-                                        <td><input type="password" value={password.password}/></td>
+                                        <td><input type={this.state.showPassword?"password":"text"} value={password.password} readonly /></td>
                                         <td>{password.type}</td>
                                     </tr>
                                     
@@ -58,8 +69,19 @@ export default class viewPasswordComponent extends Component {
                             }
                         </tbody>
                     </table>
+                    <button onClick={this.showPasswords}>Show/hide Passwords</button>
                 </div>
+                </div>:<div> Please Login to view passwords</div>
+                }
             </div>
         )
     }
 }
+
+function mapStateToProps(state){
+    return({
+        logged:state.AppDetails.logged
+    })
+}
+
+export default connect (mapStateToProps)(viewPasswordComponent);

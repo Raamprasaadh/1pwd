@@ -48,8 +48,7 @@ e.preventDefault();
     pwd:this.state.pwd,
     type:this.state.type
 }
-console.log("password");
-console.log(password);
+
 axios.post('http://localhost:3001/password/add',password)
 .then(res=>console.log(res.data))
 .catch(err=>console.error(err));
