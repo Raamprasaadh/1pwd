@@ -7,6 +7,8 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^1.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
@@ -16,10 +18,13 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "production": "concurrently \" serve -s build -l 3000\" \" cd ../server && npm start\"",
-    "test": "react-scripts test",
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "build": "react-scripts build && yarn electron-build",
+    "production": "concurrently \" npm start\" \" cd ../server && npm start\"",
+    "electron-build": "electron-builder",
+    "release": "yarn react-build && electron-builder --publish=always",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,6 +43,12 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
-  }
+    ],
+    "author": "ram"
+  },
+  "devDependencies": {
+    "electron": "^11.2.0",
+    "electron-builder": "^22.9.1"
+  },
+  "main": "public/electron.js"
 }
