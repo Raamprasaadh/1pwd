@@ -1,0 +1,4 @@
+{"_id":{"$oid":"60053f995fc8012e947ee6b3"},"name":"email"}
+{"_id":{"$oid":"60053fa35fc8012e947ee6b4"},"name":"Social Network"}
+{"_id":{"$oid":"60053fcef50f442e94a51700"},"name":"Banking"}
+{"_id":{"$oid":"60053fd35fc8012e947ee6b5"},"name":"Demat Account"}
