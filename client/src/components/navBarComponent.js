@@ -12,7 +12,7 @@ import '../style.css';
         super(props);
 
         this.state={
-            length:100
+            length:-1
         }
         this.logout = this.logout.bind(this);
     }
@@ -53,7 +53,7 @@ import '../style.css';
                         <Link className="navLinks" to="/login">Log in</Link> :()=>{}
                        }
                        {
-                       (this.state.length !== 0 && !this.props.logged)?
+                       (this.state.length !== 0 && this.props.logged)?
                         <div> 
                             <Link className="navLinks" to="/Login" onClick={this.logout}>Log out</Link>
                             <Link className="navLinks" to="/viewpwd">View Password</Link>
