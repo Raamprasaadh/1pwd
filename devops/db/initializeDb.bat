@@ -10,7 +10,7 @@ xcopy "types.json" "C:\Program Files\MongoDB\Server\4.0\bin"
 
 cd C:\Program Files\MongoDB\Server\4.0\bin\ 
 
-mongoimport --db 1pws --collection types --file "types.json"
+mongoimport --db 1pwd --collection types --file "types.json"
 
 del types.json
 
