@@ -7,7 +7,7 @@ A Mern Desktop Application to store passwords.
 
 1. Mongodb should be installed. [Download and install from below link](https://www.mongodb.com/try/download/community)
 
-2.Nodejs should be installed. [Download and install from below link.](https://nodejs.org/en/download/)
+2. Nodejs should be installed. [Download and install from below link.](https://nodejs.org/en/download/)
 
 **How to install:**
 
@@ -15,6 +15,7 @@ A Mern Desktop Application to store passwords.
 
 ** How to build**
 - run devops/build.bat
+- run devops/db/initializeDb.bat
 
 **How to use the application:**
 
