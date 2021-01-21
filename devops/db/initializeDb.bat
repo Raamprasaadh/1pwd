@@ -1,7 +1,6 @@
 @echo off
 title start 1pwd
 
-echo %~dp0
 
 cd %~dp0
 
