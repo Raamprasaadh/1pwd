@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {connect} from 'react-redux';
+import {Redirect} from 'react-router';
 import {logout} from '../actions';
 import logo from '../1pwd.bmp'
 import '../style.css';
@@ -36,22 +37,28 @@ import '../style.css';
                         <img src={logo} className="logoImg" alt="404"/>
                         <h2> Only-Password</h2>
                     </div>
-                    <div className="">
-                    
-                    
+                    <div className="">                    
 
                        { this.state.length === 0 ?
-                        <Link className="navLinks" to="/signin">Signup</Link>:()=>{}
+                       <div>
+                        <Link className="navLinks" to="/signin">Signup</Link>
+                        <Redirect to="/signup" />
+                        </div>
+                        :()=>{}
+                                           
                        }
                        {
                            this.state.length !== 0 && !this.props.logged ?
                            
-                        <Link className="navLinks" to="/login">Log in</Link> :
+                        <Link className="navLinks" to="/login">Log in</Link> :()=>{}
+                       }
+                       {
+                       (this.state.length !== 0 && !this.props.logged)?
                         <div> 
                             <Link className="navLinks" to="/Login" onClick={this.logout}>Log out</Link>
                             <Link className="navLinks" to="/viewpwd">View Password</Link>
                             <Link className="navLinks" to="/addpwd">Add Password</Link>
-                        </div>
+                        </div>:()=>{}
                         }
                     
                     </div>

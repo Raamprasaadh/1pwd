@@ -53,7 +53,7 @@ import '../style.css';
                 Login
             </div>
             
-                <form className="loginForm" onSubmit={this.onSubmit}>
+                <form className="smallForm" onSubmit={this.onSubmit}>
                     
                     <div className="formGroup">
                         <label className="formLabel">Password : </label>

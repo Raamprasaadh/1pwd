@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "production":"concurrently \" serve -s build -l 3000\" \" cd ../server && npm start\"",
+    "production": "concurrently \" serve -s build -l 3000\" \" cd ../server && npm start\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

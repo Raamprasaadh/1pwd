@@ -18,8 +18,8 @@ function App() {
         <Route path="/viewpwd" component={ViewPassword}></Route>
         <Route path="/addpwd" component={AddPassword}></Route>
         <Route path="/login" component={Login}></Route>
-        <Route path="/signin" component={Signin}></Route>
-
+        <Route path="/signup" component={Signin}></Route>
+        <Route path="/" component={Login}></Route>
       </Switch>
         </div>
 

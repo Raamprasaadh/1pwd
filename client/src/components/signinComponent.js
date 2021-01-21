@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
 import '../style.css';
 export default class signinComponent extends Component {
     constructor(props){
@@ -64,13 +65,13 @@ export default class signinComponent extends Component {
     render() {
 
         return (
-            <div>
+            <div className="body">
                 <div className="pageTitle">
-                    <h2>Sign up</h2>
+                    Sign up
                 </div>
-                <div className="signinForm">
-                    <form onSubmit={this.onSubmit}>
-                        <h1>Going forward this will be the only password you will have to remember, we suggest you bring the best</h1>
+                <div >
+                    <form className="smallForm" onSubmit={this.onSubmit}>
+                    <div className="pageHeading"> Going forward this will be the only password you will have to remember !</div>
                         <div className="formGroup">
                             <label className="formLabel">Password : </label>
                             <input type="password" onChange={this.onChangePassword} className="formInput"/>
@@ -81,7 +82,7 @@ export default class signinComponent extends Component {
                         </div>
                         <span style={{color:"red"}}>{this.state.error}</span>
                         <br/>
-                    <button type="submit">Sign-in</button>
+                    <button type="submit">Sign-up</button>
                     </form>
                 </div>
             </div>
