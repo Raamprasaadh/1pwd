@@ -11,15 +11,18 @@ A Mern Desktop Application to store passwords.
 
 **How to install:**
 
-- run devops/windows/installation.bat
+- run devops/install.bat
+
+** How to build**
+- run devops/build.bat
 
 **How to use the application:**
 
-- After installation, in desktop there will be a shortcut named 1pwd run it.
+- After building, run devops/1pwd.bat
 
-- a terminal will be opened followed by a browser.
+- a terminal will be opened .
 
-- once the page loads. navigate through the app.
+- open this [link](http://localhost:3000) in browser, once the page loads. navigate through the app.
 
 **How to close the application.**
 
