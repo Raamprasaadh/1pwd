@@ -15,7 +15,7 @@ A Mern Desktop Application to store passwords.
 
 ** How to build**
 - run devops/build.bat
-- run devops/db/initializeDb.bat
+- run devops/db/initializeDb.bat *as administrator*
 
 **How to use the application:**
 
