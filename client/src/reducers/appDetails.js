@@ -1,4 +1,4 @@
-const appDetails = (state={logged:false},actions)=>{
+const APP_DETAILS = (state={logged:false},actions)=>{
     switch(actions.type)
     {
         
@@ -15,9 +15,9 @@ const appDetails = (state={logged:false},actions)=>{
             };
             break;
         default:
-            return state;
+            return {...state};
             break;
     }
 }
 
-export default appDetails;
+export default APP_DETAILS;

@@ -17,6 +17,7 @@ export default class signinComponent extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
     onChangePassword(e){
+        
         this.setState({
             password:e.target.value
         });
